@@ -1,0 +1,4 @@
+../Core/Src/ws2812.c:90:6:HAL_TIM_PWM_PulseFinishedCallback	16	static
+../Core/Src/ws2812.c:96:6:ws2812_init	24	static
+../Core/Src/ws2812.c:107:6:ws2812_set_colors	48	static
+../Core/Src/ws2812.c:130:6:update_single_led	16	static
