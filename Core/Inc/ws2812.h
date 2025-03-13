@@ -38,7 +38,7 @@
 //#define WS2812_T1H_CYCLES  180   // Adjust for 800kHz (Low Pulse ~0.4µs)
 #define WS2812_T0H_CYCLES  (29)   // Adjust based on your timer settings
 #define WS2812_T1H_CYCLES  (58)   // Adjust based on your timer settings
-#define NUM_LEDS 4
+#define NUM_LEDS 8
 
 
 

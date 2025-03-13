@@ -68,7 +68,7 @@ static void MX_TIM3_Init(void);
 /* USER CODE BEGIN 0 */
 #define WS2812_DATA_PIN GPIO_PIN_8
 #define WS2812_GPIO_PORT GPIOA
-#define NUM_LEDS 4
+//#define NUM_LEDS 4
 uint32_t millisLed = 0;
 void delay_ns(uint32_t ns) {
     uint32_t cycles = (72 * ns) / 10; // Convert ns to clock cycles for 72 MHz
@@ -155,9 +155,9 @@ int main(void)
         };
  // WS2812SendColors(led_colors, NUM_LEDS);
   ws2812_init(&htim1, &hdma_tim1_ch1, TIM_CHANNEL_1);
-  ws2812_set_colors(&htim1, &led_colors, NUM_LEDS);
+  ws2812_set_colors(&htim1, (uint32_t*)led_colors, NUM_LEDS);
   HAL_Delay(2000); // 500 ms delay[
-  update_single_led(0,0,64,0);
+  update_single_led(6,0,64,0);
   HAL_Delay(2000); // 500 ms delay[
 
   bool ledStatus =false;
@@ -169,8 +169,8 @@ int main(void)
   {
 
 	  if(!ledStatus){
-		  update_single_led(3,64,0,0);
-	  }else update_single_led(3,0,0,0);
+		  update_single_led(4,64,0,0);
+	  }else update_single_led(4,0,0,0);
 	  ledStatus = !ledStatus;
 	  HAL_Delay(500);
     /* USER CODE END WHILE */
